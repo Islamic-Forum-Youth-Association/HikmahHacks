@@ -6,7 +6,8 @@
 function Faqs() {
     // User state (If necessary) goes here
     return (
-
+        <>
+        <img className="bg-[#26272D] scale-150 fill-[#202127]" src="/mosque.png" alt="" />
         <div className="bg-[#202127] p-20 ">
         {/* Text */}
         <h1 className="text-white text-4xl">Frequently asked questions</h1>
@@ -15,6 +16,8 @@ function Faqs() {
             
         </div>
         </div>
+
+        </>
     );
 }
 // Any helper functions/components go here

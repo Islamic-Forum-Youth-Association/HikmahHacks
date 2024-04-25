@@ -7,7 +7,7 @@ import Faqs from "./components/faqs";
 export default function Home() {
   return (
     <>
-    <main className="absolute min-h-full w-full flex flex-col">
+    <main className="absolute min-h-full w-full flex flex-col bg-[#26272D]">
       
       <Nav/>
       <Hero/>
