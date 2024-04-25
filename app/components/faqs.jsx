@@ -7,8 +7,14 @@ function Faqs() {
     // User state (If necessary) goes here
     return (
 
-        // JSX goes here.
-
+        <div className="bg-[#202127] p-20 ">
+        {/* Text */}
+        <h1 className="text-white text-4xl">Frequently asked questions</h1>
+        {/* Columns */}
+        <div className="p-28 bg-[#202127] flex flex-col ">
+            
+        </div>
+        </div>
     );
 }
 // Any helper functions/components go here
