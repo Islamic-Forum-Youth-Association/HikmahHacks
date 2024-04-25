@@ -10,7 +10,7 @@ function Hero() {
                 <p className="mt-7 xl:text-left text-center  text-gray-400 mx-5">Register today for a weekend of inspiration and creation!</p>
                 <div className='flex justify-center  mt-10  '><button className=' text-[#4FFFA0] -translate-y-1 rounded-full bg-[#676767] py-3 px-12 font-bold mt-10 text-xl '><b>REGISTER</b></button></div>
             </div>
-            <div className=" xl:translate-y-[-10vh] translate-y-8  md:mt-[10vh] xl:pt-0  xl:scale-125 scale-75 md:scale-90 "><img className=" object-cover w-96  aspect-square   rounded-full"src="photo-1692977579997-948328cdb7d2.avif" alt="picture of the Green dome" /></div>
+            <div className=" xl:translate-y-[-10vh] translate-y-8 xl:mt-[16vh]  md:mt-[-10vh] pb-20 xl:pt-0  xl:scale-125 scale-75 md:scale-90 "><img className=" object-cover w-96  aspect-square   rounded-full"src="photo-1692977579997-948328cdb7d2.avif" alt="picture of the Green dome" /></div>
         </div>
         <div>
 
