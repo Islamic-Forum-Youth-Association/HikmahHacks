@@ -3,6 +3,7 @@
 import Blog_stip from "./components/blog_strip";
 import Nav from "./components/nav";
 import Hero from "./components/hero";
+import Faqs from "./components/faqs";
 export default function Home() {
   return (
     <>
@@ -10,8 +11,7 @@ export default function Home() {
       
       <Nav/>
       <Hero/>
-      <div></div>
-
+      <Faqs/>   
     </main>
     </>
   );
