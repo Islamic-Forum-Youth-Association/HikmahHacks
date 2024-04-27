@@ -108,7 +108,7 @@ const forgot =()=>{
 
 const register = () => {
     return(
-        <div className="-translate-y-16 flex flex-col p-3 md:scale-150">
+        <div className="-translate-y-16 flex flex-col item-center p-3 md:scale-150">
         {/* Email container */}
         <div className="email">
           {/* Icon for input */}
@@ -121,7 +121,7 @@ const register = () => {
             placeholder="Email"
           />
 
-          <span>Enter your email and we will send you a magic link </span>
+          <p>Enter your email and we will send you a magic link </p>
         </div>
         </div>
     )
