@@ -4,6 +4,7 @@ import Blog_stip from "./components/blog_strip";
 import Nav from "./components/nav";
 import Hero from "./components/hero";
 import Faqs from "./components/faqs";
+import Team_strip from "./components/team";
 import { Ubuntu } from 'next/font/google';
 
 export default function Home() {
@@ -12,7 +13,9 @@ export default function Home() {
     <main className="absolute min-h-full w-full flex flex-col bg-[#26272D] Ubuntu.className">
       <Nav/> 
       <Hero/>
-      <Faqs/>   
+      <Faqs/>
+      <Team_strip/>   
+      
     </main>
     </>
   );
