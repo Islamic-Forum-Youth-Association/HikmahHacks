@@ -121,7 +121,7 @@ const register = () => {
             placeholder="Email"
           />
 
-          <p>Enter your email and we will send you a magic link </p>
+          <p className="text-2xl text-white">Enter your email and we will send you a magic link </p>
         </div>
         </div>
     )

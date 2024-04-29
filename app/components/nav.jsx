@@ -5,11 +5,12 @@ export default function Nav() {
   return (
     <nav className=' bg-[#202127] p-6  w-screen sticky '>
         <div className='flex justify-between xl:items-center'>
+          <a href="/">
             <div className=' flex flex-col md:text-3xl mt-1 text-[#FFFFFF] text-opacity-60'>
                <span className='flex gap-2 '><IoTerminal /> HIKMAH</span> 
                 <span className='text-sm text-opacity-45 text-[#8FA0A6]'>HACKS</span>
             </div>
-            
+            </a>
             <ul className='[&>li]:xl:block  text-2xl [&>li]:hidden flex  align-center  text-[#FFFFFF] text-opacity-60 [&>li]:px-16   translate-y-2  justify-between scale-75 -mx-28'>
                 <li>HOME</li>
                 <li>ABOUT</li>
