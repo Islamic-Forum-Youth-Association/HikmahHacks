@@ -21,16 +21,16 @@ function Faqs() {
     };
 
     return (
-<>
-        <img className="bg-[#26272D] lg:scale-100 z-3 background-transpare scale-y-150  overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
+    <div className="max-h-[150vh]">      
+        <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-clip fill-[#202127]" src="/mosque.png" alt="Divider" />
 
         <div className="container px-auto min-w-[100vw] bg-[#202127]">
-            <div className="grid xl:grid-cols-2 grid-rows-2 gap-8  scale-90 xl:scale-100 gap-x-32 justify-center">
+            <div className="grid xl:grid-cols-2 grid-rows-2 scale-90  ">
                 <div className="p-4">
                     <h1 className="text-white text-3xl mx-auto xl:px-64 my-[6vh]">Frequently asked questions</h1>
-                    <div className="space-y-6 xl:ml-64">
+                    <div className="space-y-6 xl:ml-64 mb-12">
                         {QAs.map((qa, index) => (
-                            <div key={index} className={`text-[#26272D] scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] flex justify-around xl:w-[32vw] w-[100vw] static xl:gap-x-36 items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${selectedQA === qa && 'bg-gray-800'}`} onClick={() => handleTabClick(qa)}>
+                            <div key={index} className={`text-[#26272D] scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] flex justify-around xl:w-[32vw] w-[100vw] static xl:gap-x-36 items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${selectedQA === qa && 'bg-gray-800 text-white hover:bg-gray-600'}`} onClick={() => handleTabClick(qa)}>
                                 <div className="flex items-center">
                                     <FaCode size={24} className="mr-2" />
                                     <div className="text-lg">{qa.question}</div>
@@ -49,7 +49,7 @@ function Faqs() {
                 </div>
             </div>
         </div>
-        </>
+        </div>
     );
 }
 
