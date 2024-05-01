@@ -31,7 +31,7 @@ function TeamStrip() {
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center">
                     <div className="absolute inset-0 bg-black opacity-50"></div>
-                    <div className="bg-white p-8 rounded-lg z-10">
+                    <div className="bg-black p-8 rounded-lg z-10">
                         <h2 className="text-2xl font-bold mb-4">Team Member</h2>
                         <p className="text-lg">{selectedMember}</p>
                         <button className="mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
