@@ -1,11 +1,12 @@
 // Example Import, import YOUR component here to see on main page
 // Main entry file
-import Blog_stip from "./components/blog_strip";
+import Hero from "./components/hero";
+
 export default function Home() {
   return (
 
     <main>
-      <Blog_stip/>
+      <Hero/>
     </main>
   );
 }
