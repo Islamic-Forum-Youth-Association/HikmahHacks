@@ -1,6 +1,37 @@
 'use client'
 // Imports go here
 import React, { useState } from 'react';
+
+// Define team information
+const teams = [
+    {
+        name: "Muzzammil Faisal Abdur-Razak",
+        title: "Developer",
+        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+    {
+        name: "Rashad Usmanali",
+        title: "Developer",
+        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+
+    },
+    {
+        name: "Ammar Hussein",
+        title: "Developer",
+        image: "1697658635083.jpg",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+    {
+        name: "Milad Salihi",
+        title: "Developer",
+        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+
+];
+
 function TeamStrip() {
     const [showModal, setShowModal] = useState(false);
     const [selectedMember, setSelectedMember] = useState('');
@@ -29,15 +60,28 @@ function TeamStrip() {
 
             {/* Modal */}
             {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-black opacity-50"></div>
-                    <div className="bg-white p-8 rounded-lg z-10">
-                        <h2 className="text-2xl font-bold mb-4">Team Member</h2>
-                        <p className="text-lg">{selectedMember}</p>
-                        <button className="mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
-                    </div>
+    <div className="fixed inset-0  z-50 flex md:p-32 h-[100%] py-auto items-center justify-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="bg-[#202127] flex-col p-auto  max-w-3/4 max-h-3/4 py-8 rounded-3xl z-10 overflow-hidden">
+           {/* Modal itself */}
+            <div className="xl:p-32 flex flex-col xl:flex-row  h-full">
+                <div className="flex flex-col justify-center items-center md:p-8 p-0">
+                    <img className="rounded-full h-48 w-48 xl:h-20 xl: xl:w-[100%] xl:scale-[200%]" src={selectedTeam.image} alt="Team member" />
+                    <p className="md:pt-8 md:text-2xl text-xl mt-4 text-center">{selectedTeam.name}</p>
+                    <p className="md:text-lg text-center">{selectedTeam.title}</p>
                 </div>
-            )}
+                <div className="flex flex-col justify-center items-center">
+                    <p className=" text-white mt-0 pt-0 scale-75 mx-0 mb-8 ">{selectedTeam.blurb}</p>
+                    <button className="relative mt-4 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-gray-600 rounded-md w-20 h-15 text-white hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+)}
+
+
+
             <div className='flex flex-col gap-10 justify-center text-2xl p-32'>
                 <span>Like to join our team?</span>
                 <button className='p-4 bg-[#676767] text-[#4FFFA0] hover:bg-[#3a3a3a] transition-all ease-linear duration-150 rounded-full'>JOIN TODAY</button>
