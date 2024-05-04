@@ -1,5 +1,6 @@
 'use client'
 // Imports go here
+// Imports go here
 import React, { useState } from 'react';
 
 // Define team information
@@ -15,6 +16,7 @@ const teams = [
         title: "Developer",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
         blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+
 
     },
     {
@@ -34,10 +36,11 @@ const teams = [
 
 function TeamStrip() {
     const [showModal, setShowModal] = useState(false);
-    const [selectedMember, setSelectedMember] = useState('');
-    // User state (If necessary) goes here
-    const handleOpenModal = (name) => {
-        setSelectedMember(name);
+    const [selectedTeam, setSelectedTeam] = useState(null);
+
+    // Function to handle opening the modal with the entire card
+    const handleOpenModal = (team) => {
+        setSelectedTeam(team);
         setShowModal(true);
     };
     
@@ -45,17 +48,16 @@ function TeamStrip() {
     const handleCloseModal = () => {
         setShowModal(false);
     };
+
     return (
-        <div className="text-white overflow-clip w-full min-h-screen bg-[#26272d] px-8 sm:px-16 md:px-32  flex flex-col justify-evenly items-center">
+        <div id="team" className="text-white overflow-clip w-full min-h-screen bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 sm:py-16">The Team</h1>
-            <div className=" grid  grid-cols-2 md:grid-cols-3  xl:grid-cols-6 gap-8 sm:gap-x-12    ">
-            <div className="text-white"><TeamCard name="Sayyid Muzzammil Al-Faisal" title="Developer" image="depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp" onClick={() => handleOpenModal("Sayyid Muzzammil Al-Faisal")} /></div>
-                <div className="text-white"><TeamCard name="Sidi Rashad Al-Faisal" title="Developer" image="depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp" onClick={() => handleOpenModal("Sidi Rashad Al-Faisal")} /></div>
-                <div className="text-white"><TeamCard name="Sidi Ammar Al-Faisal" title="Developer" image="1697658635083.jpg" onClick={() => handleOpenModal("Sidi Ammar Al-Faisal")} /></div>
-                <div className="text-white"><TeamCard name="Milaad [Insert name and photo]" title="Developer" image="depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp" onClick={() => handleOpenModal("Milaad [Insert name and photo]")} /></div>
-                <div className="text-white"><TeamCard name="Wajdaan [Insert name and photo]" title="Developer" image="depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp" onClick={() => handleOpenModal("Wajdaan [Insert name and photo]")} /></div>
-                <div className="text-white"><TeamCard name="Jay [Insert name and photo]" title="Developer" image="depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp" onClick={() => handleOpenModal("Jay [Insert name and photo]")} /></div>
-         
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-8 sm:gap-x-12">
+                {teams.map((team, index) => (
+                    <div className="text-white" key={index}>
+                        <TeamCard team={team} onClick={() => handleOpenModal(team)} />
+                    </div>
+                ))}
             </div>
 
             {/* Modal */}
@@ -74,6 +76,7 @@ function TeamStrip() {
                     <p className=" text-white mt-0 pt-0 scale-75 mx-0 mb-8 ">{selectedTeam.blurb}</p>
                     <button className="relative mt-4 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-gray-600 rounded-md w-20 h-15 text-white hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
 
+
                 </div>
             </div>
         </div>
@@ -84,13 +87,15 @@ function TeamStrip() {
 
             <div className='flex flex-col gap-10 justify-center text-2xl p-32'>
                 <span>Like to join our team?</span>
-                <button className='p-4 bg-[#676767] text-[#4FFFA0] hover:bg-[#3a3a3a] transition-all ease-linear duration-150 rounded-full'>JOIN TODAY</button>
+                <button className='px-16 py-0 md:py-4 bg-[#676767] text-[#4FFFA0] hover:bg-[#3a3a3a] transition-all ease-linear duration-150 rounded-full'>JOIN TODAY</button>
             </div>
         </div>
     );
 }
 
-const TeamCard = ({ name, title, image, onClick }) => {
+const TeamCard = ({ team, onClick }) => {
+    const { name, title, image } = team;
+
     return (
         <div className="w-full h-full border outline-1 outline-[#D9D9D9] rounded-lg overflow-hidden m-0 sm:m-0" onClick={onClick}>
             <div className="mb-2">
@@ -106,9 +111,6 @@ const TeamCard = ({ name, title, image, onClick }) => {
         </div>
     )
 }
-
-    
-
 
 // Any helper functions/components go here
 
