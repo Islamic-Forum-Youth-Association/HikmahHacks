@@ -10,7 +10,7 @@ import { Ubuntu } from 'next/font/google';
 export default function Home() {
   return (
     <>
-    <main className="absolute min-h-full w-full flex flex-col overflow-hidden bg-[#26272D] Ubuntu.className">
+    <main className="absolute overflow-clip min-h-full w-full flex flex-col bg-[#26272D] Ubuntu.className">
       <Nav/> 
       <Hero/>
       

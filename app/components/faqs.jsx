@@ -20,7 +20,7 @@ function Faqs() {
 
     return (
     <div className="max-h-[150vh] overflow-hidden">      
-        <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-clip fill-[#202127]" src="/mosque.png" alt="Divider" />
+        <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
 
         <div className="container px-auto min-w-[100vw] bg-[#202127]">
             <div className="grid xl:grid-cols-2 grid-rows-2 scale-90  ">
