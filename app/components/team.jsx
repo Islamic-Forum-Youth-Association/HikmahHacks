@@ -6,25 +6,31 @@ import React, { useState } from 'react';
 // Define team information
 const teams = [
     {
-        name: "Sayyid Muzzammil Al-Faisal",
+        name: "Muzzammil Faisal Abdur-Razak",
         title: "Developer",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
         blurb: ""
     },
     {
-        name: "Sidi Rashad Al-Faisal",
+        name: "Rashad Usmanali",
         title: "Developer",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
         blurb: ""
 
     },
     {
-        name: "Sidi Ammar Al-Faisal",
+        name: "Ammar Hussein",
         title: "Developer",
         image: "1697658635083.jpg",
         blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
     },
-    // Add more team members as needed
+    {
+        name: "Milad Salihi",
+        title: "Developer",
+        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+
 ];
 
 function TeamStrip() {

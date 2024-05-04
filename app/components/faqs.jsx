@@ -39,7 +39,7 @@ function Faqs() {
                         ))}
                     </div>
                 </div>
-                <div className="xl:py-32 mx-auto  w-[100%]  ">
+                <div className="xl:p-32 mx-auto  w-[100%]  ">
                     {selectedQA && (
                         <div>
                             <h2 className="text-white text-3xl mb-4">{selectedQA.question}</h2>
