@@ -6,25 +6,32 @@ import React, { useState } from 'react';
 // Define team information
 const teams = [
     {
-        name: "Sayyid Muzzammil Al-Faisal",
+        name: "Muzzammil Faisal Abdur-Razak",
         title: "Developer",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
-        blurb: ""
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
     },
     {
-        name: "Sidi Rashad Al-Faisal",
+        name: "Rashad Usmanali",
         title: "Developer",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
-        blurb: ""
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+
 
     },
     {
-        name: "Sidi Ammar Al-Faisal",
+        name: "Ammar Hussein",
         title: "Developer",
         image: "1697658635083.jpg",
         blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
     },
-    // Add more team members as needed
+    {
+        name: "Milad Salihi",
+        title: "Developer",
+        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+
 ];
 
 function TeamStrip() {
@@ -43,7 +50,7 @@ function TeamStrip() {
     };
 
     return (
-        <div className="text-white overflow-clip w-full min-h-screen bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
+        <div id="team" className="text-white overflow-clip w-full min-h-screen bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 sm:py-16">The Team</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-8 sm:gap-x-12">
                 {teams.map((team, index) => (
@@ -55,18 +62,21 @@ function TeamStrip() {
 
             {/* Modal */}
             {showModal && (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0  z-50 flex md:p-32 h-[100%] py-auto items-center justify-center">
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="bg-[#202127] flex-col w-full sm:w-3/4 md:w-2/3 lg:w-1/2 h-3/4 p-8 rounded-3xl z-10 overflow-hidden">
-            <button className="absolute top-0 right-0 mt-2 mr-2 bg-red-600 rounded-full w-8 h-8 text-white hover:bg-gray-700" onClick={handleCloseModal}>X</button>
-            <div className="flex flex-col xl:flex-row gap-12 h-full">
-                <div className="flex flex-col justify-center items-center p-8">
-                    <img className="rounded-full h-48 w-48 xl:h-20 xl:w-[100%] xl:scale-[200%]" src={selectedTeam.image} alt="Team member" />
-                    <p className="pt-8 text-2xl mt-4 text-center">{selectedTeam.name}</p>
-                    <p className="text-lg text-center">{selectedTeam.title}</p>
+        <div className="bg-[#202127] flex-col p-auto  max-w-3/4 max-h-3/4 py-8 rounded-3xl z-10 overflow-hidden">
+           {/* Modal itself */}
+            <div className="xl:p-32 flex flex-col xl:flex-row  h-full">
+                <div className="flex flex-col justify-center items-center md:p-8 p-0">
+                    <img className="rounded-full h-48 w-48 xl:h-20 xl: xl:w-[100%] xl:scale-[200%]" src={selectedTeam.image} alt="Team member" />
+                    <p className="md:pt-8 md:text-2xl text-xl mt-4 text-center">{selectedTeam.name}</p>
+                    <p className="md:text-lg text-center">{selectedTeam.title}</p>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                    <p className="text-lg text-white mb-4">{selectedTeam.blurb}</p>
+                    <p className=" text-white mt-0 pt-0 scale-75 mx-0 mb-8 ">{selectedTeam.blurb}</p>
+                    <button className="relative mt-4 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-gray-600 rounded-md w-20 h-15 text-white hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
+
+
                 </div>
             </div>
         </div>
