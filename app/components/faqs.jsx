@@ -16,21 +16,23 @@ function Faqs() {
             setSelectedQA(qa);
             
         }
-        
+    }
+
 
     return (
     <div id="faq" className="max-h-[150vh] overflow-hidden">      
 
-        <div className="container px-auto min-w-[100vw] bg-[#202127]">
+        <div className="container px-auto min-w-[100vw] bg-[#1A1B22]">
             <div className="grid xl:grid-cols-2 grid-rows-2 scale-90  ">
-                <div className="p-4">
-                    <h1 className="text-white text-3xl mx-auto xl:px-64 my-[6vh]">Frequently asked questions</h1>
-                    <div className="space-y-6  xl:ml-64 mb-12">
+                <div className=""> 
+                        <h1 className="text-white text-3xl mx-auto xl:pl-64 my-[6vh] inline-block md:text-4xl pr-15 flex items-center justify-center">Frequently asked questions</h1>
+                    <div className="space-y-6 xl:ml-64 mb-12">
                         {QAs.map((qa, index) => (
-                            <div key={index} className={`text-[#26272D] scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] flex justify-around xl:w-[32vw] w-[100vw] static xl:gap-x-36 items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${selectedQA.answer === qa.answer && 'bg-gray-800 text-white hover:bg-gray-600'}`} onClick={() => handleTabClick(qa)}>
+                            <div key={index} className={`text-[#26272D] scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] flex justify-around xl:w-[32vw] w-[100vw] static xl:gap-x-36 items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${selectedQA === qa && 'bg-gray-800 text-white hover:bg-gray-600 '} md:`} onClick={() => handleTabClick(qa)}>
+
                                 <div className="flex items-center">
                                     <FaCode size={24} className="mr-2" />
-                                    <div className="text-lg">{qa.question}</div>
+                                    <div className="text-lg xl:text-lg md:text-4xl">{qa.question}</div>
                                 </div>
                             </div>
                         ))}
