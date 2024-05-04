@@ -16,7 +16,7 @@ function Faqs() {
             setSelectedQA(qa);
             
         }
-    }
+    
 
 
     return (
