@@ -14,7 +14,7 @@ const teams = [
     {
         name: "Rashad Usmanali",
         title: "Developer",
-        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        image: "IMG_6638.PNG",
         blurb: ""
 
     },

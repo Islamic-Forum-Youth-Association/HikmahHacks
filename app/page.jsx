@@ -13,6 +13,7 @@ export default function Home() {
     <main className="absolute min-h-full w-full flex flex-col overflow-hidden bg-[#26272D] Ubuntu.className">
       <Nav/> 
       <Hero/>
+      
       <Faqs/>
       <Team_strip/>   
       
