@@ -4,7 +4,7 @@ function Hero() {
     // User state (If necessary) goes here
     return (
         <>
-        <div id="Hero" className="w-full min-h-[100vh] bg-[#26272D] flex flex-col-reverse xl:gap-x-32 xl:flex-row justify-evenly items-center flex-grow md:pt-20 xl:pt-10 xl:ml-32 md:p-3 xl:px-24 py-10 overflow-clip">
+        <div id="home" className="w-full min-h-[100vh] bg-[#26272D] flex flex-col-reverse xl:gap-x-32 xl:flex-row justify-evenly items-center flex-grow md:pt-20 xl:pt-10 xl:ml-32 md:p-3 xl:px-24 py-10 overflow-clip">
 
 
             <div className="text-section  mx-1/2     ">

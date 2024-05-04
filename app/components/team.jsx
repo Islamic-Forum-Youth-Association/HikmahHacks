@@ -49,7 +49,7 @@ function TeamStrip() {
     };
 
     return (
-        <div className="text-white overflow-clip w-full min-h-screen bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
+        <div id="team" className="text-white overflow-clip w-full min-h-screen bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 sm:py-16">The Team</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-8 sm:gap-x-12">
                 {teams.map((team, index) => (

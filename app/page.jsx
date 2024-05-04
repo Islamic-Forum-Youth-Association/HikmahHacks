@@ -13,7 +13,8 @@ export default function Home() {
     <main className="absolute overflow-clip min-h-full w-full flex flex-col bg-[#26272D] Ubuntu.className">
       <Nav/> 
       <Hero/>
-      
+      <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
+
       <Faqs/>
       <Team_strip/>   
       
