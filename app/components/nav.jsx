@@ -3,7 +3,7 @@ import { IoTerminal } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 export default function Nav() {
   return (
-    <nav className=' bg-[#202127] p-6  w-screen sticky '>
+    <nav className=' bg-[#202127] p-6  w-screen sticky top-0 z-10 '>
         <div className='flex justify-between xl:items-center'>
           <a href="/">
             <div className=' flex flex-col md:text-3xl mt-1 text-[#FFFFFF] text-opacity-60'>
