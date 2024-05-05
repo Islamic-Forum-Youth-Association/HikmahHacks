@@ -6,7 +6,7 @@ import Hero from "./components/hero";
 import Faqs from "./components/faqs";
 import Team_strip from "./components/team";
 import { Ubuntu } from 'next/font/google';
-
+import Footer from "./components/footer";
 export default function Home() {
   return (
     <>
@@ -16,7 +16,8 @@ export default function Home() {
       <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
 
       <Faqs/>
-      <Team_strip/>   
+      <Team_strip/>
+      <Footer/>
       
     </main>
     </>

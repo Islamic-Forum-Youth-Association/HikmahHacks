@@ -38,9 +38,10 @@ export default function Nav() {
         </a>
         <ul className='[&>li]:xl:block text-2xl [&>li]:hidden [&>*]:hover:cursor-pointer flex align-center text-[#FFFFFF] text-opacity-60 [&>li]:px-16 translate-y-2 justify-between scale-75 -mx-28'>
             <li onClick={() => handleScroll('home')}>HOME</li>
-            <li onClick={() => handleScroll('about')}>ABOUT</li>
             <li onClick={() => handleScroll('faq')}>FAQ</li>
             <li onClick={() => handleScroll('team')}>MEET THE TEAM</li>
+            <li onClick={() => handleScroll('contact')}>CONTACT US</li>
+
             <li className='rounded-full bg-[#676767] py-5 -translate-y-5'><button onClick={() => handleScroll('register')} className='flex text-[#4FFFA0] -translate-y-1'><b>REGISTER</b></button></li>
           </ul>
 
@@ -71,9 +72,10 @@ export default function Nav() {
       >
         <ul className="text-white text-lg space-y-4">
           <li onClick={() => { handleScroll('home'); }}>HOME</li>
-          <li onClick={() => { handleScroll('about'); }}>ABOUT</li>
           <li onClick={() => { handleScroll('faq'); }}>FAQ</li>
           <li onClick={() => { handleScroll('team'); }}>MEET THE TEAM</li>
+          <li onClick={() => handleScroll('contact')}>CONTACT US</li>
+
           <li className="rounded-full bg-[#676767] py-2 px-4 text-[#4FFFA0] inline-block">
             <button onClick={() => { handleScroll('register'); }} className="focus:outline-none">
               <b>REGISTER</b>

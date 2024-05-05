@@ -10,10 +10,10 @@ function Footer() {
     return (
         <>
         {/* JSX goes here.*/}
-        <div className="bg-[#1C1D22]">
-        <div className="container mx-auto px-[30vem]">
+        <div id="contact" className="bg-[#1C1D22]">
+        <div className="container mx-auto px-[30vem] h-[50vh]">
             <h1 className="text-gray-50 text-3xl p-5 text-center">Contact us</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-20">
                 {/* Grid Item 1 */}
                 <div className="p-4 rounded-md shadow-md">
                 <h1 className="text-2xl text-gray-50 font-bold">Got any questions? Contact us!</h1>
