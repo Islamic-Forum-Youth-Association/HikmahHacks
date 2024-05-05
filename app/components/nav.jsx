@@ -1,16 +1,19 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { IoTerminal } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdAlternateEmail } from "react-icons/md";
 
 export default function Nav() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [scrollToSection, setScrollToSection] = useState(null);
+  const sidebarRef = useRef(null);
 
   const handleScroll = (id) => {
     setScrollToSection(id);
-    setIsSidebarOpen(false); // Close the sidebar
+    setIsSidebarOpen(false); 
   }
 
   useEffect(() => {
@@ -19,7 +22,7 @@ export default function Nav() {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      setScrollToSection(null); // Reset scrollToSection after scrolling
+      setScrollToSection(null); 
     }
   }, [scrollToSection]);
 
@@ -29,9 +32,10 @@ export default function Nav() {
 
   return (
     <nav className='bg-[#202127] p-6 w-screen sticky top-0 z-50 overflow-clip'>
+    {/* Nav Bar */} 
       <div className='flex justify-between items-center'>
         <a onClick={() => handleScroll('home')}>
-          <div className='flex flex-col md:text-3xl mt-1 text-[#FFFFFF] text-opacity-60'>
+          <div className='flex [&>*]:hover:cursor-pointer flex-col md:text-3xl mt-1 text-[#FFFFFF] text-opacity-60'>
             <span className='flex gap-2'><IoTerminal /> HIKMAH</span> 
             <span className='text-sm text-opacity-45 text-[#8FA0A6]'>HACKS</span>
           </div>
@@ -41,8 +45,9 @@ export default function Nav() {
             <li onClick={() => handleScroll('faq')}>FAQ</li>
             <li onClick={() => handleScroll('team')}>MEET THE TEAM</li>
             <li onClick={() => handleScroll('contact')}>CONTACT US</li>
-
-            <li className='rounded-full bg-[#676767] py-5 -translate-y-5'><button onClick={() => handleScroll('register')} className='flex text-[#4FFFA0] -translate-y-1'><b>REGISTER</b></button></li>
+            <li className='rounded-full bg-[#676767] py-4 -translate-y-5 text-[#4FFFA0] flex justify-center items-center'>
+              <button onClick={() => handleScroll('register')} className='font-bold text-2xl'><b>REGISTER</b></button>
+            </li>
           </ul>
 
         {/* Sidebar Toggle Button */}
@@ -65,23 +70,39 @@ export default function Nav() {
 
       {/* Sidebar Component */}
       <motion.div 
-        className={`fixed inset-y-0 right-0 bg-[#202127] w-[100%] p-8 z-50 flex flex-col justify-center items-start`}
+        className={`fixed inset-y-0 right-0 bg-[#1C1D22] w-[88%] p-8 z-50 flex flex-col justify-between items-start`}
+        ref={sidebarRef}
         initial={{ x: '100%' }}
-        animate={{ x: isSidebarOpen ? '75%' : '100%' }}
+        animate={{ x: isSidebarOpen ? '25%' : '100%' }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
+        style={{ overflowY: 'auto' }} 
       >
         <ul className="text-white text-lg space-y-4">
           <li onClick={() => { handleScroll('home'); }}>HOME</li>
           <li onClick={() => { handleScroll('faq'); }}>FAQ</li>
           <li onClick={() => { handleScroll('team'); }}>MEET THE TEAM</li>
           <li onClick={() => handleScroll('contact')}>CONTACT US</li>
-
           <li className="rounded-full bg-[#676767] py-2 px-4 text-[#4FFFA0] inline-block">
-            <button onClick={() => { handleScroll('register'); }} className="focus:outline-none">
-              <b>REGISTER</b>
-            </button>
+            <button onClick={() => { handleScroll('register'); }} className="focus:outline-none"><b>REGISTER</b></button>
           </li>
         </ul>
+
+        {/* Footer */}
+        <div id="sidebar-footer" className="fixed bg-[#1C1D22] w-[68%] top-80 z-50 flex flex-col items-start">
+          <h2 className="text-white font-bold text-lg mb-4">
+          <span className='flex gap-2'>Got any Questions?</span> 
+            <span className='text-sm text-opacity-45 text-[#8FA0A6]'>Contact us!</span>
+            </h2>
+          <div className="flex flex-col">
+            <button className="text-gray-300 bg-[#26272D] text-base rounded-full min-w-full p-3 text-left hover:bg-[#2b2c32] mb-2">
+              <MdAlternateEmail className="inline-block rounded-full size-[24px] mr-2 bg-[#31333D] p-2" color="#4FFFA0" /> admin@hikmahhacks.com
+            </button>
+
+            <button className="text-gray-300 bg-[#26272D] text-base rounded-full min-w-full p-3 text-left hover:bg-[#2b2c32]">
+              <FaPhoneAlt className="inline-block rounded-full size-[24px] mr-2 bg-[#31333D] p-2" color="#4FFFA0" /> (905) 527-1111
+            </button>
+          </div>
+        </div>
       </motion.div>
     </nav>
   )
