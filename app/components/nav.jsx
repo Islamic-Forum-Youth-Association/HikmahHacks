@@ -2,9 +2,11 @@
 import React, { useState } from 'react';
 import { IoTerminal } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Nav() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const controls = useAnimation();
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -16,6 +18,28 @@ export default function Nav() {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   }
+
+  // Animation 
+  const modalVariants = {
+    hidden: {
+      x: '100%',
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  // Animation controls
+  const toggleModalAnimation = async () => {
+    await controls.start(isModalOpen ? "hidden" : "visible");
+    toggleModal();
+  };
 
   return (
     <nav className='bg-[#202127] p-6 w-screen sticky top-0 z-50 overflow-clip'>
@@ -35,27 +59,36 @@ export default function Nav() {
           </ul>
 
         {/* Modal Toggle Button */}
-        <button onClick={toggleModal} className="block xl:hidden text-[#676767] p-4 -translate-y-1 scale-150 mr-2">
+        <button onClick={toggleModalAnimation} className="block xl:hidden text-[#676767] p-4 -translate-y-1 scale-150 mr-2">
           <GiHamburgerMenu size={24} />
         </button>
       </div>
 
-        {/* Modal Component */}
-        {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center" onClick={toggleModal}>
-            <div className="bg-[#202127] w-full max-w-xl mx-auto p-8 rounded-lg text-center" onClick={(e) => e.stopPropagation()} >
-              <ul className="text-white [&>*]:hover:cursor-pointer text-lg space-y-4">
-                <li onClick={() => { handleScroll('home'); toggleModal(); }}>HOME</li>
-                <li onClick={() => { handleScroll('about'); toggleModal(); }}>ABOUT</li>
-                <li onClick={() => { handleScroll('faq'); toggleModal(); }}>FAQ</li>
-                <li onClick={() => { handleScroll('team'); toggleModal(); }}>MEET THE TEAM</li>
-                <li className="rounded-full bg-[#676767] py-2 px-4 text-[#4FFFA0] inline-block">
-                  <button onClick={() => { handleScroll('register'); toggleModal(); }} className="focus:outline-none"><b>REGISTER</b></button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        )}
+      {/* Modal Component */}
+      <motion.div 
+        className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center"
+        onClick={toggleModalAnimation}
+        initial="hidden"
+        animate={controls}
+        variants={modalVariants}
+      >
+        <motion.div 
+          className="bg-[#202127] w-full max-w-xl mx-auto p-8 rounded-lg text-center"
+          onClick={(e) => e.stopPropagation()} 
+        >
+          <ul className="text-white text-lg space-y-4">
+            <li onClick={() => { handleScroll('home'); toggleModalAnimation(); }}>HOME</li>
+            <li onClick={() => { handleScroll('about'); toggleModalAnimation(); }}>ABOUT</li>
+            <li onClick={() => { handleScroll('faq'); toggleModalAnimation(); }}>FAQ</li>
+            <li onClick={() => { handleScroll('team'); toggleModalAnimation(); }}>MEET THE TEAM</li>
+            <li className="rounded-full bg-[#676767] py-2 px-4 text-[#4FFFA0] inline-block">
+              <button onClick={() => { handleScroll('register'); toggleModalAnimation(); }} className="focus:outline-none">
+                <b>REGISTER</b>
+              </button>
+            </li>
+          </ul>
+        </motion.div>
+      </motion.div>
     </nav>
   )
 }
