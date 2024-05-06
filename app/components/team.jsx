@@ -8,7 +8,7 @@ const teams = [
     {
         name: "Muzzammil Faisal Abdur-Razak",
         title: "Administrator and Executive",
-        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        image: "SMuzzammil.jpg",
         blurb: "TBD"
     },
     {
