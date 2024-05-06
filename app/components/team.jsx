@@ -7,21 +7,21 @@ import React, { useState } from 'react';
 const teams = [
     {
         name: "Muzzammil Faisal Abdur-Razak",
-        title: "Developer",
+        title: "Administrator and Executive",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
-        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+        blurb: "TBD"
     },
     {
         name: "Rashad Usmanali",
-        title: "Developer",
+        title: "Organizer",
         image: "IMG_6638.PNG",
-        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+        blurb: "TBD"
 
 
     },
     {
         name: "Ammar Hussein",
-        title: "Developer",
+        title: "Developer/Team Lead",
         image: "1697658635083.jpg",
         blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
     },
@@ -29,25 +29,26 @@ const teams = [
         name: "Raeid Usmanali",
         title: "Developer",
         image: "raeid.jpg",
-        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+        blurb: "Freshman with a flare for figma, and everything dev!"
     },
     {
-        name: "Milad Salihi",
+        name: "Jay Siddique",
         title: "Developer",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
-        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+        blurb: "TBD"
+
     },
     {
         name: "Milad Salihi",
         title: "Developer",
         image: "94bfed5b-a316-4488-9898-8463c2861c6b.jpg",
-        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+        blurb: "I'm a second-year computer science student with expertise in Python, Java, and web development. I'm passionate about applying technology to solve practical problems and love taking on new challenges. I'm excited to collaborate with others who share my enthusiasm for innovation and making a positive impact in technology."
     },
     {
         name: "Wajdaan Malik",
         title: "Developer",
         image: "wajdaan.jpg",
-        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+        blurb: "TBD"
     },
 
 ];
@@ -116,7 +117,7 @@ const TeamCard = ({ team, onClick }) => {
     const { name, title, image } = team;
 
     return (
-        <div className="max-w-96 md:w-48 md:mr-38 h-full border outline-1 outline-[#D9D9D9] rounded-lg  " onClick={onClick}>
+        <div className="xl:min-w-72 md:max-w-96 md:w-48 md:mr-38 h-full border outline-1 outline-[#D9D9D9] rounded-lg  " onClick={onClick}>
             <div className="mb-2">
                 <img 
                     className="object-cover  aspect-square " 
@@ -125,8 +126,11 @@ const TeamCard = ({ team, onClick }) => {
                     style={{  maxHeight: '100%', minWidth: '100%' }} 
                 />
             </div>
-            <p className="text-center md:text-xl mx-1 font-semibold mb-1">{name}</p>
-            <p className="text-center mb-4">{title}</p>
+            <div className='flex flex-col items-center w-full justify-center py-6'>
+            <p className="text-center md:text-xl mx-1 font-semibold ">{name}</p>
+            <p className="text-center py-2">{title}</p>
+
+            </div>
         </div>
     )
 }
