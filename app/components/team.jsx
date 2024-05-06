@@ -84,9 +84,9 @@ function TeamStrip() {
             {showModal && (
     <div className="fixed inset-0  z-50 flex md:p-32 h-full py-auto justify-center items-center">
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="bg-[#202127] flex-col p-auto  w-3/4 justify-center max-h-3/4  rounded-3xl z-10 overflow-hidden">
+        <div className="bg-[#202127] flex-col p-auto  w-3/4 justify-center min-h-3/4  rounded-3xl z-10 overflow-hidden">
            {/* Modal itself */}
-            <div className="xl:px-28 xl:pt-20 pt-10 flex flex-col">
+            <div className="xl:px-28 xl:pt-32 pt-10 flex flex-col">
                 <div className="flex flex-col justify-center items-center ">
                     <img className="rounded-full h-32 w-32 scale-100  xl:scale-[200%] mb-6 aspect-auto " src={selectedTeam.image} alt="Team member" />
                     <p className="xl:pt-8 md:text-2xl text-xl xl:mt-4 text-center">{selectedTeam.name}</p>
