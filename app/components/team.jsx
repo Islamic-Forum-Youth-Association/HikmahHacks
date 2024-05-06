@@ -14,7 +14,7 @@ const teams = [
     {
         name: "Rashad Usmanali",
         title: "Developer",
-        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        image: "IMG_6638.PNG",
         blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
 
 
@@ -26,9 +26,27 @@ const teams = [
         blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
     },
     {
+        name: "Raeid Usmanali",
+        title: "Developer",
+        image: "raeid.jpg",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+    {
         name: "Milad Salihi",
         title: "Developer",
         image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+    {
+        name: "Milad Salihi",
+        title: "Developer",
+        image: "94bfed5b-a316-4488-9898-8463c2861c6b.jpg",
+        blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
+    },
+    {
+        name: "Wajdaan Malik",
+        title: "Developer",
+        image: "wajdaan.jpg",
         blurb: "Recent graduate of a computer science program and aspiring Junior Software Developer, recognized for hands-on development and project experience using React, Python, MongoDB, and more across the healthcare, marketing, and biotechnology industries."
     },
 
@@ -40,6 +58,7 @@ function TeamStrip() {
 
     // Function to handle opening the modal with the entire card
     const handleOpenModal = (team) => {
+        console.log(team)
         setSelectedTeam(team);
         setShowModal(true);
     };
@@ -50,9 +69,9 @@ function TeamStrip() {
     };
 
     return (
-        <div id="team" className="text-white overflow-clip w-full min-h-screen bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
+        <div id="team" className="text-white overflow-clip w-full min-h-[120vh] bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 sm:py-16">The Team</h1>
-            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-8 sm:gap-x-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 justify-center z-30 gap-8 md:gap-x-32 xl:gap-x-40 min-w-32 xl:min-w-64 ">
                 {teams.map((team, index) => (
                     <div className="text-white" key={index}>
                         <TeamCard team={team} onClick={() => handleOpenModal(team)} />
@@ -62,19 +81,19 @@ function TeamStrip() {
 
             {/* Modal */}
             {showModal && (
-    <div className="fixed inset-0  z-50 flex md:p-32 h-[100%] py-auto items-center justify-center">
+    <div className="fixed inset-0  z-50 flex md:p-32 h-full py-auto justify-center items-center">
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="bg-[#202127] flex-col p-auto  max-w-3/4 max-h-3/4 py-8 rounded-3xl z-10 overflow-hidden">
+        <div className="bg-[#202127] flex-col p-auto  w-3/4 justify-center max-h-3/4  rounded-3xl z-10 overflow-hidden">
            {/* Modal itself */}
-            <div className="xl:p-32 flex flex-col xl:flex-row  h-full">
-                <div className="flex flex-col justify-center items-center md:p-8 p-0">
-                    <img className="rounded-full h-48 w-48 xl:h-20 xl: xl:w-[100%] xl:scale-[200%]" src={selectedTeam.image} alt="Team member" />
-                    <p className="md:pt-8 md:text-2xl text-xl mt-4 text-center">{selectedTeam.name}</p>
+            <div className="xl:px-28 xl:pt-20 pt-10 flex flex-col">
+                <div className="flex flex-col justify-center items-center ">
+                    <img className="rounded-full h-32 w-32 scale-100  xl:scale-[200%] mb-6 aspect-auto " src={selectedTeam.image} alt="Team member" />
+                    <p className="xl:pt-8 md:text-2xl text-xl xl:mt-4 text-center">{selectedTeam.name}</p>
                     <p className="md:text-lg text-center">{selectedTeam.title}</p>
                 </div>
-                <div className="flex flex-col justify-center items-center">
-                    <p className=" text-white mt-0 pt-0 scale-75 mx-0 mb-8 ">{selectedTeam.blurb}</p>
-                    <button className="relative mt-4 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-gray-600 rounded-md w-20 h-15 text-white hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
+                <div className="flex flex-col  items-center">
+                    <p className=" text-white xl:text-xl  p-16 xl:p-0 text-pretty mt-2 mb-12 pt-0">{selectedTeam.blurb}</p>
+                    <button className="relative xl:mt-16 -mt-6 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-gray-600 rounded-md w-20 h-15 text-white hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
 
 
                 </div>
@@ -97,7 +116,7 @@ const TeamCard = ({ team, onClick }) => {
     const { name, title, image } = team;
 
     return (
-        <div className="w-full h-full border outline-1 outline-[#D9D9D9] rounded-lg overflow-hidden m-0 sm:m-0" onClick={onClick}>
+        <div className="min-w-[64px] md:w-48 md:mr-38 h-full border outline-1 outline-[#D9D9D9] rounded-lg  " onClick={onClick}>
             <div className="mb-2">
                 <img 
                     className="object-cover w-full h-56 xl:h-72" 

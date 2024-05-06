@@ -10,8 +10,8 @@ function Footer() {
     return (
         <>
         {/* JSX goes here.*/}
-        <div id="contact" className="bg-[#1C1D22]">
-        <div className="container mx-auto px-[30vem] h-[50vh]">
+        <div id="contact" className="bg-[#1C1D22] z-10">
+        <div className="container mx-auto px-[30vem] min-h-[100vh] xl:min-h-[50vh] -z-10">
             <h1 className="text-gray-50 text-3xl p-5 text-center">Contact us</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-20">
                 {/* Grid Item 1 */}
@@ -40,9 +40,11 @@ function Footer() {
                 {/* Grid Item 2 */}
                 <div className="p-4 mb-3">
                         <button className="text-xl text-gray-300 bg-[#26272D] rounded-full min-w-full p-3 text-left hover:bg-[#2b2c32]">
-                          <FaPhoneAlt className="inline-block rounded-full size-[50px] mr-4 bg-[#31333D] p-3" color="#4FFFA0" />(905) 527-1111
-                        </button>
-
+                          <span>
+                        <FaPhoneAlt className="inline-block rounded-full size-[50px] mr-4 bg-[#31333D] p-3" color="#4FFFA0" />
+                          (905) 527-1111
+                          </span>                        
+                          </button>
                         <button className="text-xl  text-gray-300 bg-[#26272D] rounded-full min-w-full p-3 mt-2 text-left hover:bg-[#2b2c32]">
                         <MdAlternateEmail className ="inline-block rounded-full size-[50px] mr-4 bg-[#31333D] p-2" color="#4FFFA0" />admin@hikmahhacks.com</button>
         

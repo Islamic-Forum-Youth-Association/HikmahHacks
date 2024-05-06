@@ -16,7 +16,11 @@ export default function Home() {
       <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
 
       <Faqs/>
+      <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/wavesOpacity.svg" alt="Divider" />
+
       <Team_strip/>
+      <img className="bg-[#26272D] object-contain scale-150 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/wavesNegative.svg" alt="Divider" />
+
       <Footer/>
       
     </main>
