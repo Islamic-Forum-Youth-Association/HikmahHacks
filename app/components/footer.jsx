@@ -13,14 +13,14 @@ function Footer() {
         <div id="contact" className="bg-[#1C1D22] z-10">
         <div className="container mx-auto px-[30vem] min-h-[100vh] xl:min-h-[50vh] -z-10">
             <h1 className="text-gray-50 text-3xl p-5 text-center">Contact us</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-32   p-20">
                 {/* Grid Item 1 */}
                 <div className="p-4 rounded-md shadow-md">
                 <h1 className="text-2xl text-gray-50 font-bold">Got any questions? Contact us!</h1>
                 <p className="text-xl mt-2.5 text-[#4FFFA0]">admin@hikmahhacks.com</p>
 
                     {/* Social Media Icons */}
-                    <div className="py-4 ">
+                    <div className="py-4 flex ">
                         <button><RxDiscordLogo className="inline-block rounded-full size-[55px]" color="#D1D5DB"/></button>
 
                         <button><FaInstagram className="inline-block rounded-full size-[55px] ml-6" color="#D1D5DB"/></button>

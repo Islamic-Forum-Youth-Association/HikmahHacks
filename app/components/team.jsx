@@ -69,9 +69,9 @@ function TeamStrip() {
     };
 
     return (
-        <div id="team" className="text-white overflow-clip w-full min-h-[120vh] bg-[#26272d] px-8 sm:px-16 md:px-32 flex flex-col justify-evenly items-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 sm:py-16">The Team</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 justify-center z-30 gap-8 md:gap-x-32 xl:gap-x-40 min-w-32 xl:min-w-64 ">
+        <div id="team" className="text-white overflow-clip w-full min-h-[120vh] bg-[#26272d] px-8 sm:px-16 md:px-42  flex flex-col justify-evenly items-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 ">The Team</h1>
+            <div className="grid grid-cols-2 md:grid-cols-3  z-30 gap-8 md:gap-x-32 xl:gap-x-56 justify-center  ">
                 {teams.map((team, index) => (
                     <div className="text-white" key={index}>
                         <TeamCard team={team} onClick={() => handleOpenModal(team)} />
@@ -104,7 +104,7 @@ function TeamStrip() {
 
 
 
-            <div className='flex flex-col gap-10 justify-center text-2xl p-32'>
+            <div className='flex flex-col gap-10 justify-center text-2xl p-32 text-center'>
                 <span>Like to join our team?</span>
                 <button className='px-16 py-0 md:py-4 bg-[#676767] text-[#4FFFA0] hover:bg-[#3a3a3a] transition-all ease-linear duration-150 rounded-full'>JOIN TODAY</button>
             </div>
@@ -116,13 +116,13 @@ const TeamCard = ({ team, onClick }) => {
     const { name, title, image } = team;
 
     return (
-        <div className="min-w-[64px] md:w-48 md:mr-38 h-full border outline-1 outline-[#D9D9D9] rounded-lg  " onClick={onClick}>
+        <div className="max-w-96 md:w-48 md:mr-38 h-full border outline-1 outline-[#D9D9D9] rounded-lg  " onClick={onClick}>
             <div className="mb-2">
                 <img 
-                    className="object-cover w-full h-56 xl:h-72" 
+                    className="object-cover  aspect-square " 
                     src={image} 
                     alt={name} 
-                    style={{ maxWidth: '100%', maxHeight: '100%', minWidth: '100%' }} 
+                    style={{  maxHeight: '100%', minWidth: '100%' }} 
                 />
             </div>
             <p className="text-center md:text-xl mx-1 font-semibold mb-1">{name}</p>
