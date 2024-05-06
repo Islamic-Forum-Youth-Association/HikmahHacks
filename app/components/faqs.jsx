@@ -32,7 +32,7 @@ function Faqs() {
                         <h1 className="text-white text-3xl mx-auto xl:pl-64 my-[6vh] inline-block md:text-4xl pr-15  items-center justify-center">Frequently asked questions</h1>
                     <div className="space-y-6 xl:ml-64 mb-12">
                         {QAs.map((qa, index) => (
-                            <div key={index} className={`text-[#26272D] scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] flex justify-around xl:w-[32vw] w-[100vw]  items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${selectedQA.answer === qa.answer && 'bg-gray-800 text-white hover:bg-gray-600 '} md:`} onClick={() => handleTabClick(qa)}>
+                            <div key={index} className={`text-[#26272D] scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] flex justify-around xl:w-[32vw] w-[100vw] text-center  items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${selectedQA.answer === qa.answer && 'bg-gray-800 text-white hover:bg-gray-600 '} md:`} onClick={() => handleTabClick(qa)}>
 
                                 <div className="flex items-center">
                                     
