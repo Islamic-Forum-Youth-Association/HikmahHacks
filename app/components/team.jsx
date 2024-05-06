@@ -93,7 +93,7 @@ function TeamStrip() {
                     <p className="md:text-lg text-center">{selectedTeam.title}</p>
                 </div>
                 <div className="flex flex-col  items-center">
-                    <p className=" text-white xl:text-xl text-sm p-6 py-16 xl:p-0 text-pretty mt-2 xl:mb-12 mb-6 pt-0">{selectedTeam.blurb}</p>
+                    <p className=" text-white xl:text-xl text-xs p-6 py-16 xl:p-0 text-pretty mt-2 xl:mb-12 mb-6 pt-0">{selectedTeam.blurb}</p>
                     <button className="relative xl:mt-16 -mt-6 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-gray-600 rounded-md w-20 h-15 text-white hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
 
 
