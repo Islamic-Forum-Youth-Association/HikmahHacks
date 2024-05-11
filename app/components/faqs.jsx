@@ -24,7 +24,7 @@ function Faqs() {
 
 
     return (
-    <div id="faq" className="min-h-[100vh] xl:h-[95vh]  ">      
+    <div id="faq" className="min-h-[100vh] xl:h-[95vh] ">      
 
         <div className="container px-auto min-w-[100vw] bg-[#1A1B22]">
             <div className="grid xl:grid-cols-2 grid-rows-2 scale-90  ">
