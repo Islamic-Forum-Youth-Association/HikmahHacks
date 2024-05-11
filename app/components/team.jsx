@@ -2,6 +2,7 @@
 // Imports go here
 // Imports go here
 import React, { useState } from 'react';
+import { Tilt } from 'react-tilt';
 
 // Define team information
 const teams = [
@@ -42,7 +43,7 @@ const teams = [
         name: "Milad Salihi",
         title: "Developer",
         image: "94bfed5b-a316-4488-9898-8463c2861c6b.jpg",
-        blurb: "I'm a second-year computer science student with expertise in Python, Java, and web development. I'm passionate about applying technology to solve practical problems and love taking on new challenges. I'm excited to collaborate with others who share my enthusiasm for innovation and making a positive impact in technology."
+        blurb: "Third-year computer science student with expertise in Python, Java, and web development who's passionate about applying technology to solve practical problems and love taking on new challenges."
     },
     {
         name: "Wajdaan Malik",
@@ -72,7 +73,7 @@ function TeamStrip() {
     return (
         <div id="team" className="text-white overflow-clip w-full min-h-[120vh] bg-[#26272d] px-8 sm:px-16 md:px-42  flex flex-col justify-evenly items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 ">The Team</h1>
-            <div className="grid grid-cols-2 md:grid-cols-3  z-30 gap-8 md:gap-x-32 xl:gap-x-56 justify-center  ">
+            <div className="grid grid-cols-2 md:grid-cols-3 z-30 gap-8 md:gap-x-32 xl:gap-x-56 justify-center ">
                 {teams.map((team, index) => (
                     <div className="text-white" key={index}>
                         <TeamCard team={team} onClick={() => handleOpenModal(team)} />
@@ -92,7 +93,7 @@ function TeamStrip() {
                     <p className="xl:pt-8 md:text-2xl text-xl xl:mt-4 text-center">{selectedTeam.name}</p>
                     <p className="md:text-lg text-center">{selectedTeam.title}</p>
                 </div>
-                <div className="flex flex-col  items-center">
+                <div className="flex flex-col items-center">
                     <p className=" text-white xl:text-xl text-xs p-6 py-16 xl:p-0 text-pretty mt-2 xl:mb-12 mb-6 pt-0">{selectedTeam.blurb}</p>
                     <button className="relative xl:mt-16 -mt-6 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-gray-600 rounded-md w-20 h-15 text-white hover:bg-gray-700" onClick={handleCloseModal}>Close</button>
 
@@ -117,6 +118,17 @@ const TeamCard = ({ team, onClick }) => {
     const { name, title, image } = team;
 
     return (
+        <Tilt
+        className="Tilt"
+        options={{
+          scale: 1.05,
+          max: 25,
+          glare: true,
+          "max-glare": 0.5,
+          transition: true, // Enable transition on tilt changes
+          perspective: 1000 // Set perspective for tilt effect
+        }}
+        >
         <div className="xl:min-w-72 md:max-w-96 md:w-48 md:mr-38 h-full border outline-1 outline-[#D9D9D9] rounded-lg  " onClick={onClick}>
             <div className="mb-2">
                 <img 
@@ -132,6 +144,7 @@ const TeamCard = ({ team, onClick }) => {
 
             </div>
         </div>
+    </Tilt>
     )
 }
 
