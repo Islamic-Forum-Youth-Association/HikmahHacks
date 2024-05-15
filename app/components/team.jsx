@@ -72,9 +72,9 @@ function TeamStrip() {
     };
 
     return (
-        <div id="team" className="text-white overflow-clip w-full min-h-[120vh] bg-[#26272d] px-8 sm:px-16 md:px-42  flex flex-col justify-evenly items-center">
+        <div id="team" className="text-white overflow-clip min-h-[120vh] bg-[#26272d] px-8 sm:px-16 md:px-42 flex flex-col justify-evenly items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 ">The Team</h1>
-            <div className="grid grid-cols-2 md:grid-cols-3 z-30 gap-8 md:gap-x-32 xl:gap-x-56 justify-center ">
+            <div className="grid grid-cols-2 md:grid-cols-3 z-30 gap-8 xl:gap-x-56 justify-center">
                 {teams.map((team, index) => (
                     <motion.div className="text-white" key={index} layoutId={team.name}>
                         <TeamCard team={team} onClick={() => handleOpenModal(team)} />
@@ -87,7 +87,7 @@ function TeamStrip() {
         {showModal && (
         <div 
             className="fixed inset-0  z-50 flex md:p-32 h-full py-auto justify-center items-center">
-            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 bg-black opacity-50" onClick={handleCloseModal}></div>
             <motion.div 
                 className="bg-[#202127] flex-col p-auto  w-3/4 justify-center min-h-3/4  rounded-3xl z-10 overflow-hidden"
                 initial={{scale: 0.8}}
@@ -103,7 +103,7 @@ function TeamStrip() {
                         <p className="md:text-lg text-center">{selectedTeam.title}</p>
                     </div>
                     <div className="flex flex-col items-center">
-                        <p className=" text-white xl:text-xl text-xs p-6 py-16 xl:p-0 text-pretty mt-2 xl:mb-12 mb-6 pt-0">{selectedTeam.blurb}</p>
+                        <p className=" text-white xl:text-xl text-xs text-pretty m-6 pb-16 xl:pb-0">{selectedTeam.blurb}</p>
                         <button className="relative xl:mt-16 -mt-6 size-10 bottom-10 left-px mr-2 md:scale-100 scale-75 bg-[#676767] rounded-md w-20 h-15 text-[#4FFFA0] hover:bg-[#3a3a3a]" onClick={handleCloseModal}>Close</button>
                     </div>
                 </div>
@@ -137,10 +137,10 @@ const TeamCard = ({ team, onClick }) => {
           perspective: 1000 // Set perspective for tilt effect
         }}
         >
-        <div className="xl:min-w-72 md:max-w-96 md:w-48 md:mr-38 h-full border border-gray-300 rounded-lg shadow-2xl" onClick={onClick} style={{cursor:'pointer'}}>
+        <div className="xl:min-w-72 md:max-w-96 md:w-48 md:mr-38 border border-gray-300 rounded-lg shadow-2xl min-h-[340px] sm:min-h-[380px] md:min-h-[380px] lg:min-h-[440px]" onClick={onClick} style={{cursor:'pointer'}}>
             <div className="mb-2">
                 <img 
-                    className="object-cover  aspect-square rounded-lg" 
+                    className="object-cover  aspect-square rounded-t-md" 
                     src={image} 
                     alt={name} 
                     style={{  maxHeight: '100%', minWidth: '100%' }} 
