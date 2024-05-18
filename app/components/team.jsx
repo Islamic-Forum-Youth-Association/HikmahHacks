@@ -116,7 +116,7 @@ function TeamStrip() {
 
             <div className='flex flex-col gap-10 justify-center text-2xl p-32 text-center'>
                 <span>Like to join our team?</span>
-                <button className='px-16 py-0 md:py-4 bg-[#676767] text-[#4FFFA0] hover:bg-[#3a3a3a] transition-all ease-linear duration-150 rounded-full'>JOIN TODAY</button>
+                <button className='px-16 py-0 md:py-4 bg-[#676767] text-[#4FFFA0] hover:bg-[#3a3a3a] transition-all ease-linear duration-150 rounded-full'><a href="https://forms.gle/smiJ7YyujgWZyJTGA">JOIN TODAY</a></button>
             </div>
         </div>
     );
