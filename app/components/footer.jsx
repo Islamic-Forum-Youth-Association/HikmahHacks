@@ -13,7 +13,7 @@ function Footer() {
         <div id="contact" className="bg-[#1C1D22] z-10">
         <h1 className="text-5xl text-center text-gray-50 font-bold">Got any questions? Reach out!</h1>
 
-        <div className="container mx-auto px-[30vem] min-h-[100vh] xl:min-h-[50vh] -z-10">
+        <div className="container mx-auto px-[30vem] min-h-[90vh] xl:min-h-[50vh] -z-10">
             <div className="grid grid-cols-1  gap-32  p-20">
                 {/* Grid Item 1 */}
                 <div className="p-4 rounded-md  text-center ">
@@ -34,9 +34,11 @@ function Footer() {
 
                 
             </div>
-        </div>
-    </div>
+            <p className="text-center text-white">&#169; Islamic Forum of Canada {new Date().getFullYear()}</p>
 
+        </div>
+
+    </div>
         </>
     );
 }
