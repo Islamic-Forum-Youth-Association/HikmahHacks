@@ -73,7 +73,7 @@ function TeamStrip() {
 
     return (
         <div id="team" className="text-white overflow-clip min-h-[120vh] bg-[#26272d] px-8 sm:px-16 md:px-42 flex flex-col justify-evenly items-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 ">The Team</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl py-12 z-50 ">The Team</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 z-30 gap-8 xl:gap-x-56 justify-center">
                 {teams.map((team, index) => (
                     <motion.div className="text-white" key={index} layoutId={team.name}>
