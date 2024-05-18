@@ -52,7 +52,7 @@ export default function Nav() {
   };
 
   return (
-    <nav className='bg-[#202127] p-6 w-screen sticky top-0 z-50 overflow-clip'>
+    <nav className='bg-[#202127] p-6 w-screen sticky top-0 z-[60] overflow-clip'>
       {/* Nav Bar */}
       <div className='flex justify-between items-center'>
         <a onClick={() => handleScroll('home')}>
@@ -114,15 +114,7 @@ export default function Nav() {
             <span className='flex gap-2'>Got any Questions?</span>
             <span className='text-sm text-opacity-45 text-[#8FA0A6]'>Contact us!</span>
           </h2>
-          <div className="flex flex-col">
-            <button className="text-gray-300 bg-[#26272D] text-sm rounded-full min-w-full p-3 text-left hover:bg-[#2b2c32] mb-2">
-              <MdAlternateEmail className="inline-block rounded-full size-[24px] mr-2 bg-[#31333D] p-1" color="#4FFFA0" /> admin@hikmahhacks.com
-            </button>
-
-            <button className="text-gray-300 bg-[#26272D] text-sm rounded-full min-w-full p-3 text-left hover:bg-[#2b2c32]">
-              <FaPhoneAlt className="inline-block rounded-full size-[24px] mr-2 bg-[#31333D] p-1" color="#4FFFA0" /> (905) 527-1111
-            </button>
-          </div>
+         
         </div>
       </motion.div>
     </nav>
