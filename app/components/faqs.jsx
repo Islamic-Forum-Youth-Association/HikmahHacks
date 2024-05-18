@@ -11,8 +11,8 @@ function Faqs() {
             answer: "Hikmah is the Arabic word for \"wisdom.\" It's not just about knowing a lot of things, but also about using what you know in smart and thoughtful ways. It's about making good decisions, understanding things better, and handling tricky situations wisely.\n\nThe name \"HikmahHacks\" for a hackathon is a cool mix of ideas. A hackathon is usually an event where people who love tech, like programmers and designers, come together to build new software quickly and creatively. The word \"hacks\" here means coming up with neat and clever ways to do something.\n\nSo, when you hear \"HikmahHacks,\" think about using tech skills in a smart way to solve problems. The organizers want everyone at the hackathon to not only create cool tech stuff but also to think carefully about how their creations can help people and make things better. They're encouraging everyone to blend their tech skills with wise thinking, just like the word \"hikmah\" suggests."
         },
         { question: "Is this event in person?", answer: "Yes! We will hold the event at the Islamic Forum of Canada (200 Advanced Blvd, Brampton, ON)" },
-        { question: "Sign me up! When is the event?", answer: "We are currently taking registrations ending May 17th @12AM EST, thereafter we will reach out to potential candidates on the official date! " },
-        { question: "Do I have to have expert coding knowledge?", answer: "No, this event is open to all levels of coding expertise and workshops will be held at the event so there is a little something for everyone!" }
+        { question: "Sign me up! When is the event?", answer: "We are currently taking registrations ending for our event scheduled for July 13th @12AM EST. Please visit the \"Register\" button on the navbar " },
+        {question: "Do I have to have expert coding knowledge?" , answer:"No, this event is open to all levels of coding expertise and workshops will be held at the event so there is a little something for everyone!"}
     ];
 
     const [selectedQA, setSelectedQA] = useState(QAs[0]);
@@ -65,6 +65,15 @@ function Faqs() {
                             </div>
                         )}
                     </div>
+                </div>
+
+                <div className="xl:px-24 py-12  w-[100%] h-full flex justify-center items-center ">
+                    {selectedQA && (
+                        <div className="flex  flex-col">
+                            <h2 className="text-[#4fffa0] inline-block md:text-5xl text-2xl mb-4">{selectedQA.question}</h2>
+                            <div className="text-white md:text-2xl text-lg h-fit text-pretty  ">{selectedQA.answer}</div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

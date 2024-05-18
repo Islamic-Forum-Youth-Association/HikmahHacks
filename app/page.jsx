@@ -7,21 +7,25 @@ import Faqs from "./components/faqs";
 import Team_strip from "./components/team";
 import { Ubuntu } from 'next/font/google';
 import Footer from "./components/footer";
+
 export default function Home() {
   return (
     <>
     <main className="absolute overflow-clip min-h-full w-full flex flex-col bg-[#26272D] Ubuntu.className">
-      <Nav/> 
+      <Nav id="container"/> 
       <Hero/>
-      <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
 
-      <Faqs/>
+      <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
+      
+      <Faqs id="container"/>
+
+
       <img className="bg-[#26272D] object-contain scale-150  z-3 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/wavesOpacity.svg" alt="Divider" />
 
-      <Team_strip/>
+      <Team_strip id="container"/>
       <img className="bg-[#26272D] object-contain scale-150 background-transparent w-[100%]   overflow-hidden fill-[#202127]" src="/wavesNegative.svg" alt="Divider" />
 
-      <Footer/>
+      <Footer id="container"/>
       
     </main>
     </>
