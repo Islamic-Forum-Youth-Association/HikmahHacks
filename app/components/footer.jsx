@@ -11,15 +11,16 @@ function Footer() {
         <>
         {/* JSX goes here.*/}
         <div id="contact" className="bg-[#1C1D22] z-10">
+        <h1 className="text-5xl text-center text-gray-50 font-bold">Got any questions? Reach out!</h1>
+
         <div className="container mx-auto px-[30vem] min-h-[100vh] xl:min-h-[50vh] -z-10">
             <div className="grid grid-cols-1  gap-32  p-20">
                 {/* Grid Item 1 */}
-                <div className="p-4 rounded-md shadow-md ">
-                <h1 className="text-4xl text-gray-50 font-bold">Got any questions? Reach out!</h1>
+                <div className="p-4 rounded-md  text-center ">
                 <p className="text-xl mt-2.5 text-[#4FFFA0]"><a href="mailto:hikmahhacks@gmail.com">hikmahhacks@gmail.com</a></p>
 
                     {/* Social Media Icons */}
-                    <div className="py-4  flex flex-row [&>*]:px-2 ">
+                    <div className="py-4  flex flex-row [&>*]:px-2 justify-center">
                         <a href="DiscordLink"><button><RxDiscordLogo size={64} className="inline-block rounded-full mr-2 " color="#D1D5DB"/></button></a>
 
                         <a href="http://instagram.com/hikmahhacks"><button><FaInstagram size={64} className="inline-block rounded-full" color="#D1D5DB"/></button></a>
