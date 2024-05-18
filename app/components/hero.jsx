@@ -2,10 +2,14 @@
 // Import motion from Framer Motion
 import { motion } from 'framer-motion';
 import {Tilt} from 'react-tilt';
-
+import { useInView } from 'react-intersection-observer';
 function Hero() {
     // Animation variants
-
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.5  // Adjusts when the animation triggers (50% of the element is visible)
+    });
+        
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: {duration: 0.2} }
@@ -36,7 +40,7 @@ function Hero() {
                     Register today for a weekend of inspiration and creation!
                 </p>
                 <motion.div className='flex justify-center' whileHover="hover">
-                    <motion.button className='text-[#4FFFA0] -translate-y-1 rounded-full bg-[#676767] py-3 px-12 font-bold mt-10 text-xl' variants={buttonVariants} onClick={() => { alert("Check out our social media pages for announcements on registration!") }}>
+                    <motion.button className='text-[#4FFFA0] -translate-y-1 rounded-full bg-[#676767] py-3 z-40 px-12 font-bold mt-10 text-xl' variants={buttonVariants} onClick={() => { alert("Check out our social media pages for announcements on registration!") }}>
                         <b>REGISTER</b>
                     </motion.button>
                 </motion.div>
@@ -50,11 +54,15 @@ function Hero() {
                 backfaceVisibility: 'hidden',
                 willChange: 'transform'
             }}>
-            <div className=" xl:translate-y-[-10vh] translate-y-8 xl:mt-[16vh]  md:mt-[-10vh] pb-20 xl:pt-0  xl:scale-125 scale-75 md:scale-90">
+            <div className=" xl:translate-y-[-10vh] translate-y-16 xl:mt-[16vh]  md:mt-[-10vh] pb-0 xl:pt-0  xl:scale-125 scale-75 md:scale-90">
                 <img className=" object-cover w-96  aspect-square   rounded-full"src="photo-1692977579997-948328cdb7d2.avif" alt="picture of the Green dome" />
             
 {/* Tech stack icons */}
-
+<div className= "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full drop-shadow-2xl"style={{transform: 'scale(0.55)'}}>
+                    <img 
+                    className=" bg-[#303136] translate-x-[40%] flex-shrink rounded-full p-8 hover:scale-125" 
+                    src="nodejs.svg" alt="Node.js icon" />
+                </div>
 <div className= "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full drop-shadow-2xl"style={{transform: 'scale(0.45)'}}>
 <img 
     className=" bg-[#303136] translate-x-[10%] translate-y-[-350%] flex-shrink rounded-full p-8 hover:scale-125" 
