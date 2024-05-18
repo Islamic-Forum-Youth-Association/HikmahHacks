@@ -20,6 +20,7 @@ function Hero() {
         visible: { scale: 1, transition: { type: 'spring', stiffness: 120 } }
     };
 
+
     const textVariants = {
         hidden: { x: -200, opacity: 0 },
         visible: { x: 0, opacity: 1, transition: { type: 'spring', stiffness: 100 } }
@@ -28,6 +29,7 @@ function Hero() {
     const buttonVariants = {
         hover: { scale: 1.1, textShadow: "0px 0px 8px rgb(255,255,255)", boxShadow: "0px 0px 8px rgb(255,255,255)" },
     };
+
 
     return (
         <>
