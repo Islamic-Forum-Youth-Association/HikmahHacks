@@ -55,7 +55,7 @@ function Faqs() {
                             ))}
                         </div>
                     </div>
-                    <div className="xl:px-24 py-12 w-[100%] h-full">
+                    <div className="xl:px-24 py-12 w-[100%] h-full flex">
                         {selectedQA && (
                             <div className="flex flex-col justify-center align-middle">
                                 <h2 className="text-[#4fffa0] inline-block md:text-5xl text-2xl mb-4">{selectedQA.question}</h2>
