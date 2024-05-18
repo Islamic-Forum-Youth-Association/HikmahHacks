@@ -91,7 +91,7 @@ export default function Nav() {
 
       {/* Sidebar Component */}
       <motion.div
-        className={`fixed inset-y-0 right-0 bg-[#1C1D22] w-full p-8 z-50 flex flex-col justify-between items-start`}
+        className={`fixed inset-y-0 right-0 bg-[#1C1D22] w-full overflow-x-hidden p-8 z-50 flex flex-col justify-between items-start`}
         ref={sidebarRef}
         initial={{ x: '100%' }}
         animate={{ x: isSidebarOpen ? sidebarWidth : '100%' }}
