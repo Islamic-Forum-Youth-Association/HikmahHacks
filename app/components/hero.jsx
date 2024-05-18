@@ -42,8 +42,8 @@ function Hero() {
                     Register today for a weekend of inspiration and creation!
                 </p>
                 <motion.div className='flex justify-center' whileHover="hover">
-                    <motion.button className='text-[#4FFFA0] -translate-y-1 rounded-full bg-[#676767] py-3 z-40 px-12 font-bold mt-10 text-xl' variants={buttonVariants} onClick={() => { alert("Check out our social media pages for announcements on registration!") }}>
-                        <b>REGISTER</b>
+                    <motion.button className='text-[#4FFFA0] -translate-y-1 rounded-full bg-[#676767] py-3 z-40 px-12 font-bold mt-10 text-xl' variants={buttonVariants}>
+                        <b><a href="https://hikmah-hacks.devfolio.co/">REGISTER</a></b>
                     </motion.button>
                 </motion.div>
             </motion.div>
