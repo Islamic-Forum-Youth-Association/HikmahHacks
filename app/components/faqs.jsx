@@ -57,7 +57,7 @@ function Faqs() {
                     </div>
                     <div className="xl:px-24 py-12 w-[100%] h-full">
                         {selectedQA && (
-                            <div className="flex flex-col">
+                            <div className="flex flex-col justify-center align-middle">
                                 <h2 className="text-[#4fffa0] inline-block md:text-5xl text-2xl mb-4">{selectedQA.question}</h2>
                                 <motion.div key={selectedQA.question} initial="hidden" animate="visible" variants={answerVariants} className="flex flex-col">
                                     <div className="text-white md:text-2xl text-lg h-fit">{selectedQA.answer}</div>
@@ -67,14 +67,7 @@ function Faqs() {
                     </div>
                 </div>
 
-                <div className="xl:px-24 py-12  w-[100%] h-full flex justify-center items-center ">
-                    {selectedQA && (
-                        <div className="flex  flex-col">
-                            <h2 className="text-[#4fffa0] inline-block md:text-5xl text-2xl mb-4">{selectedQA.question}</h2>
-                            <div className="text-white md:text-2xl text-lg h-fit text-pretty  ">{selectedQA.answer}</div>
-                        </div>
-                    )}
-                </div>
+                
             </div>
         </div>
     );
