@@ -36,7 +36,7 @@ function Hero() {
         <motion.div id="home" initial="hidden" animate="visible" variants={containerVariants} className="w-full min-h-[100vh] bg-[#26272D] flex flex-col-reverse xl:gap-x-32 xl:flex-row justify-evenly items-center flex-grow md:pt-20 xl:pt-10  md:p-3 xl:px-24 py-10 overflow-clip">
             <motion.div className="text-section mx-1/2" variants={textVariants}>
                 <h1 className="md:text-6xl text-5xl xl:text-left text-center  text-white font-extrabold text-pretty">
-                    Hack the Ummah <span className="xl:block inline-block">with Hikmah</span>
+                    Code Wise; Build Virtue<span className="xl:block inline-block">with Hikmah</span>
                 </h1>
                 <p className="mt-5 xl:text-left text-center text-gray-400">
                     Register today for a weekend of inspiration and creation!
