@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaCode } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -12,62 +12,56 @@ function Faqs() {
         },
         { question: "Is this event in person?", answer: "Yes! We will hold the event at the Islamic Forum of Canada (200 Advanced Blvd, Brampton, ON)" },
         { question: "Sign me up! When is the event?", answer: "We are currently taking registrations ending for our event scheduled for July 13th @12AM EST. Please visit the \"Register\" button on the navbar " },
-        {question: "Do I have to have expert coding knowledge?" , answer:"No, this event is open to all levels of coding expertise and workshops will be held at the event so there is a little something for everyone!"}
+        { question: "Do I have to have expert coding knowledge?" , answer: "No, this event is open to all levels of coding expertise and workshops will be held at the event so there is a little something for everyone!" }
     ];
 
-    const [selectedQA, setSelectedQA] = useState(QAs[0]);
-    const [clickedQuestion, setClickedQuestion] = useState(null);
+    const [expandedIndex, setExpandedIndex] = useState(null);
 
-    const handleTabClick = (qa) => {
-        setSelectedQA(qa);
-        setClickedQuestion(qa.question);
-    }
-
-    const answerVariants = {
-        hidden: {
-            opacity: 0,
-            scale: 0.8,
-        },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 0.5,
-                delay: 0.2,
-            },
-        },
+    const toggleAccordion = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            setExpandedIndex(null);  // Close all accordions on resize to prevent layout issues
+        };
+        
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
-        <div id="faq" className="min-h-[100vh] xl:h-[95vh]">
-            <div className="container px-auto min-w-[100vw] bg-[#1A1B22]">
-                <div className="grid xl:grid-cols-2 grid-rows-2 scale-90">
-                    <div className="">
-                        <h1 className="text-white text-3xl mx-auto xl:pl-64 my-[6vh] inline-block md:text-4xl pr-15 items-center justify-center">Frequently asked questions</h1>
-                        <div className="space-y-6 xl:ml-64 mb-12">
-                            {QAs.map((qa, index) => (
-                                <motion.div key={index} className={`text-[#26272D] flex justify-center scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] xl:w-[32vw] w-[100vw] text-center items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${clickedQuestion === qa.question && 'bg-gray-800 text-white hover:bg-gray-600 '}`} onClick={() => handleTabClick(qa)} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-                                    <div className="flex justify-center">
-                                        <FaCode size={24} className="min-w-[24px] min-h-[24px] mx-2" />
-                                        <div className="text-lg xl:text-lg md:text-4xl">{qa.question}</div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="xl:px-24 py-12 w-[100%] h-full flex text-pretty">
-                        {selectedQA && (
-                            <div className="flex flex-col justify-center align-middle">
-                                <h2 className="text-[#4fffa0] inline-block md:text-5xl text-2xl mb-4">{selectedQA.question}</h2>
-                                <motion.div key={selectedQA.question} initial="hidden" animate="visible" variants={answerVariants} className="flex flex-col">
-                                    <div className="text-white md:text-2xl text-lg h-fit">{selectedQA.answer}</div>
+        <div id="faq" className="min-h-screen bg-[#1A1B22]">
+            <div className="container mx-auto py-12">
+                <h1 className="text-white text-3xl md:text-4xl z-50 text-center mb-8">Frequently asked questions</h1>
+                <div className="space-y-4 px-4 md:px-8 lg:px-16">
+                    {QAs.map((qa, index) => (
+                        <div key={index} className="bg-[#4FFFA0] rounded-xl overflow-hidden">
+                            <div 
+                                className={`flex justify-between items-center p-4 cursor-pointer ${expandedIndex === index && 'bg-gray-800 text-white hover:bg-gray-600'}`}
+                                onClick={() => toggleAccordion(index)}
+                            >
+                                <div className="flex items-center">
+                                    <FaCode size={24} className="mr-2" />
+                                    <span className="text-lg md:text-xl lg:text-2xl">{qa.question}</span>
+                                </div>
+                                <motion.div animate={{ rotate: expandedIndex === index ? 180 : 0 }}>
+                                    <FaCode size={24} />
                                 </motion.div>
                             </div>
-                        )}
-                    </div>
+                            {expandedIndex === index && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    transition={{ duration: 0.5 }}
+                                    className="bg-[#021416] p-4 text-white"
+                                >
+                                    <p className="text-sm md:text-lg lg:text-xl">{qa.answer}</p>
+                                </motion.div>
+                            )}
+                        </div>
+                    ))}
                 </div>
-
-                
             </div>
         </div>
     );

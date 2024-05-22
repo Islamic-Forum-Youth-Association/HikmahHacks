@@ -1,5 +1,12 @@
 // Example Import, import YOUR component here to see on main page
 // Main entry file
+
+// godforsaken dividers here
+// <img className="bg-[#26272D]  scale-150  z-3 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
+// <img className="bg-[#26272D]  scale-150  z-3 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/wavesOpacity.svg" alt="Divider" />
+// <img className="bg-[#26272D] scale-150 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/wavesNegative.svg" alt="Divider" />
+
+
 'use client'
 import { useState, useEffect } from 'react';
 import Nav from "./components/nav";
@@ -20,15 +27,12 @@ export default function Home() {
       <Nav id="container"/> 
       <Hero/>
 
-      <img className="bg-[#26272D]  scale-150  z-3 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
       
       <Faqs id="container"/>
 
 
-      <img className="bg-[#26272D]  scale-150  z-3 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/wavesOpacity.svg" alt="Divider" />
 
       <Team_strip id="container"/>
-      <img className="bg-[#26272D] scale-150 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/wavesNegative.svg" alt="Divider" />
 
       <Footer id="container"/>
       
