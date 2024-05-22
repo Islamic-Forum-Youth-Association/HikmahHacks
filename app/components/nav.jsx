@@ -52,7 +52,7 @@ export default function Nav() {
   };
 
   return (
-    <nav className='bg-[#202127] p-6 w-screen sticky top-0 z-50 overflow-clip'>
+    <nav className='bg-[#202127] p-6 w-screen sticky top-0 z-[60] overflow-clip'>
       {/* Nav Bar */}
       <div className='flex justify-between items-center'>
         <a onClick={() => handleScroll('home')}>
@@ -67,7 +67,7 @@ export default function Nav() {
           <li onClick={() => handleScroll('team')}>MEET THE TEAM</li>
           <li onClick={() => handleScroll('contact')}>CONTACT US</li>
           <li className='rounded-full bg-[#676767] py-4 -translate-y-5 text-[#4FFFA0] flex justify-center items-center'>
-            <button onClick={()=>{alert("Check out our social media pages for announcements on registration!")}} className='font-bold text-2xl'><b>REGISTER</b></button>
+            <button className='font-bold text-2xl'><b> <a href="https://hikmah-hacks.devfolio.co/">REGISTER</a></b></button>
           </li>
         </ul>
 
@@ -91,7 +91,7 @@ export default function Nav() {
 
       {/* Sidebar Component */}
       <motion.div
-        className={`fixed inset-y-0 right-0 bg-[#1C1D22] w-full p-8 z-50 flex flex-col justify-between items-start`}
+        className={`fixed inset-y-0 right-0 bg-[#1C1D22] w-full overflow-x-hidden p-8 z-50 flex flex-col justify-between items-start`}
         ref={sidebarRef}
         initial={{ x: '100%' }}
         animate={{ x: isSidebarOpen ? sidebarWidth : '100%' }}
@@ -103,8 +103,8 @@ export default function Nav() {
           <li onClick={() => { handleScroll('faq'); }}>FAQ</li>
           <li onClick={() => { handleScroll('team'); }}>MEET THE TEAM</li>
           <li onClick={() => handleScroll('contact')}>CONTACT US</li>
-          <li className="rounded-full bg-[#676767] py-2 px-4 text-[#4FFFA0] inline-block" onClick={()=>{alert("Check out our social media pages for announcements on registration!")}}  >
-            <button  className=""><b>REGISTER</b></button>
+          <li className="rounded-full bg-[#676767] py-2 px-4 text-[#4FFFA0] inline-block">
+            <button  className=""><b><a href="https://hikmah-hacks.devfolio.co/">REGISTER</a></b></button>
           </li>
         </ul>
 
@@ -114,15 +114,7 @@ export default function Nav() {
             <span className='flex gap-2'>Got any Questions?</span>
             <span className='text-sm text-opacity-45 text-[#8FA0A6]'>Contact us!</span>
           </h2>
-          <div className="flex flex-col">
-            <button className="text-gray-300 bg-[#26272D] text-sm rounded-full min-w-full p-3 text-left hover:bg-[#2b2c32] mb-2">
-              <MdAlternateEmail className="inline-block rounded-full size-[24px] mr-2 bg-[#31333D] p-1" color="#4FFFA0" /> admin@hikmahhacks.com
-            </button>
-
-            <button className="text-gray-300 bg-[#26272D] text-sm rounded-full min-w-full p-3 text-left hover:bg-[#2b2c32]">
-              <FaPhoneAlt className="inline-block rounded-full size-[24px] mr-2 bg-[#31333D] p-1" color="#4FFFA0" /> (905) 527-1111
-            </button>
-          </div>
+         
         </div>
       </motion.div>
     </nav>

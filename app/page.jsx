@@ -8,8 +8,6 @@ import Faqs from "./components/faqs";
 import Team_strip from "./components/team";
 import Footer from "./components/footer";
 
-const components = [<Hero />, <Faqs />, <Team_strip />];
-
 export default function Home() {
   const [currentComponentIndex, setCurrentComponentIndex] = useState(0);
   const cycleComponents = () => {
@@ -18,19 +16,23 @@ export default function Home() {
 
   return (
     <>
-      <main className="absolute overflow-clip min-h-full w-full flex flex-col bg-[#26272D] Ubuntu.className">
-      <Nav />
-        {components.map((component, index) => (
-          <div key={index} style={{ opacity: index === currentComponentIndex ? 1 : 0, transition: 'opacity 0.5s ease-in-out' }}>
-            {component}
-          </div>
-        ))}
-        <Footer />
-      </main>
+    <main className="absolute overflow-clip min-h-full w-full flex flex-col bg-[#26272D] Ubuntu.className">
+      <Nav id="container"/> 
+      <Hero/>
+
+      <img className="bg-[#26272D]  scale-150  z-3 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/mosque.png" alt="Divider" />
+      
+      <Faqs id="container"/>
 
 
-      <button className="fixed bottom-10 right-10 bg-gray-800 text-white px-4 py-2 rounded-md shadow-md" onClick={cycleComponents}>Next Component</button>
+      <img className="bg-[#26272D]  scale-150  z-3 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/wavesOpacity.svg" alt="Divider" />
 
+      <Team_strip id="container"/>
+      <img className="bg-[#26272D] scale-150 background-transparent w-[100vw]   overflow-hidden fill-[#202127]" src="/wavesNegative.svg" alt="Divider" />
+
+      <Footer id="container"/>
+      
+    </main>
     </>
   );
 }
