@@ -48,7 +48,7 @@ function Faqs() {
                             {QAs.map((qa, index) => (
                                 <motion.div key={index} className={`text-[#26272D] flex justify-center scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] xl:w-[32vw] w-[100vw] text-center items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${clickedQuestion === qa.question && 'bg-gray-800 text-white hover:bg-gray-600 '}`} onClick={() => handleTabClick(qa)} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
                                     <div className="flex justify-center">
-                                        <FaCode size={24} className="min-w-[24px] min-h-[24px] mx-2" />
+                                        <FaCode size={24} className="min-w-[24px] min-h-[23px] mx-2" />
                                         <div className="text-lg xl:text-lg md:text-4xl">{qa.question}</div>
                                     </div>
                                 </motion.div>
