@@ -36,7 +36,7 @@ const teams = [
     {
         name: "Jay Siddique",
         title: "Developer",
-        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        image: "Jay.png",
         blurb: "TBD"
 
     },
