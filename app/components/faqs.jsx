@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaCode } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -12,33 +12,26 @@ function Faqs() {
         },
         { question: "Is this event in person?", answer: "Yes! We will hold the event at the Islamic Forum of Canada (200 Advanced Blvd, Brampton, ON)" },
         { question: "Sign me up! When is the event?", answer: "We are currently taking registrations ending for our event scheduled for July 13th @12AM EST. Please visit the \"Register\" button on the navbar " },
-        {question: "Do I have to have expert coding knowledge?" , answer:"No, this event is open to all levels of coding expertise and workshops will be held at the event so there is a little something for everyone!"}
+        { question: "Do I have to have expert coding knowledge?" , answer: "No, this event is open to all levels of coding expertise and workshops will be held at the event so there is a little something for everyone!" }
     ];
 
-    const [selectedQA, setSelectedQA] = useState(QAs[0]);
-    const [clickedQuestion, setClickedQuestion] = useState(null);
+    const [expandedIndex, setExpandedIndex] = useState(null);
 
-    const handleTabClick = (qa) => {
-        setSelectedQA(qa);
-        setClickedQuestion(qa.question);
-    }
-
-    const answerVariants = {
-        hidden: {
-            opacity: 0,
-            scale: 0.8,
-        },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 0.5,
-                delay: 0.2,
-            },
-        },
+    const toggleAccordion = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            setExpandedIndex(null);  // Close all accordions on resize to prevent layout issues
+        };
+        
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
+
         <div id="faq" className="min-h-[100vh] xl:h-[95vh]">
             <div className="container px-auto min-w-[100vw] bg-[#1A1B22]">
                 <div className="grid xl:grid-cols-2 grid-rows-2 scale-90">
@@ -61,13 +54,22 @@ function Faqs() {
                                 <h2 className="text-[#4fffa0] inline-block md:text-5xl text-2xl mb-4">{selectedQA.question}</h2>
                                 <motion.div key={selectedQA.question} initial="hidden" animate="visible" variants={answerVariants} className="flex flex-col">
                                     <div className="text-white md:text-2xl text-lg h-fit">{selectedQA.answer}</div>
+
                                 </motion.div>
                             </div>
-                        )}
-                    </div>
+                            {expandedIndex === index && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    transition={{ duration: 0.5 }}
+                                    className="bg-[#021416] p-4 text-white"
+                                >
+                                    <p className="text-sm md:text-lg lg:text-xl">{qa.answer}</p>
+                                </motion.div>
+                            )}
+                        </div>
+                    ))}
                 </div>
-
-                
             </div>
         </div>
     );
