@@ -31,22 +31,30 @@ function Faqs() {
     }, []);
 
     return (
-        <div id="faq" className="min-h-screen bg-[#1A1B22]">
-            <div className="container mx-auto py-12">
-                <h1 className="text-white text-3xl md:text-4xl z-50 text-center mb-8">Frequently asked questions</h1>
-                <div className="space-y-4 px-4 md:px-8 lg:px-16">
-                    {QAs.map((qa, index) => (
-                        <div key={index} className="bg-[#4FFFA0] rounded-xl overflow-hidden">
-                            <div 
-                                className={`flex justify-between items-center p-4 cursor-pointer ${expandedIndex === index && 'bg-gray-800 text-white hover:bg-gray-600'}`}
-                                onClick={() => toggleAccordion(index)}
-                            >
-                                <div className="flex items-center">
-                                    <FaCode size={24} className="mr-2" />
-                                    <span className="text-lg md:text-xl lg:text-2xl">{qa.question}</span>
-                                </div>
-                                <motion.div animate={{ rotate: expandedIndex === index ? 180 : 0 }}>
-                                    <FaCode size={24} />
+
+        <div id="faq" className="min-h-[100vh] xl:h-[95vh]">
+            <div className="container px-auto min-w-[100vw] bg-[#1A1B22]">
+                <div className="grid xl:grid-cols-2 grid-rows-2 scale-90">
+                    <div className="">
+                        <h1 className="text-white text-3xl mx-auto xl:pl-64 my-[6vh] inline-block md:text-4xl pr-15 items-center justify-center">Frequently asked questions</h1>
+                        <div className="space-y-6 xl:ml-64 mb-12">
+                            {QAs.map((qa, index) => (
+                                <motion.div key={index} className={`text-[#26272D] flex justify-center scale-40 hover:text-white bg-[#4FFFA0] rounded-xl text-2xl xl:px-[9vw] xl:w-[32vw] w-[100vw] text-center items-center h-[12vh] hover:bg-[#021416] cursor-pointer ${clickedQuestion === qa.question && 'bg-gray-800 text-white hover:bg-gray-600 '}`} onClick={() => handleTabClick(qa)} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+                                    <div className="flex justify-center">
+                                        <FaCode size={24} className="min-w-[24px] min-h-[23px] mx-2" />
+                                        <div className="text-lg xl:text-lg md:text-4xl">{qa.question}</div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="xl:px-24 py-12 w-[100%] h-full flex text-pretty">
+                        {selectedQA && (
+                            <div className="flex flex-col justify-center align-middle">
+                                <h2 className="text-[#4fffa0] inline-block md:text-5xl text-2xl mb-4">{selectedQA.question}</h2>
+                                <motion.div key={selectedQA.question} initial="hidden" animate="visible" variants={answerVariants} className="flex flex-col">
+                                    <div className="text-white md:text-2xl text-lg h-fit">{selectedQA.answer}</div>
+
                                 </motion.div>
                             </div>
                             {expandedIndex === index && (

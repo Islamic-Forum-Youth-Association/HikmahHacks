@@ -67,7 +67,7 @@ export default function Nav() {
           <li onClick={() => handleScroll('team')}>MEET THE TEAM</li>
           <li onClick={() => handleScroll('contact')}>CONTACT US</li>
           <li className='rounded-full bg-[#676767] py-4 -translate-y-5 text-[#4FFFA0] flex justify-center items-center'>
-            <button className='font-bold text-2xl'><b> <a href="https://hikmah-hacks.devfolio.co/">REGISTER</a></b></button>
+           <a href="https://hikmah-hacks.devfolio.co/"> <button className='font-bold text-2xl'><b> REGISTER</b></button></a>
           </li>
         </ul>
 
@@ -104,7 +104,7 @@ export default function Nav() {
           <li onClick={() => { handleScroll('team'); }}>MEET THE TEAM</li>
           <li onClick={() => handleScroll('contact')}>CONTACT US</li>
           <li className="rounded-full bg-[#676767] py-2 px-4 text-[#4FFFA0] inline-block">
-            <button  className=""><b><a href="https://hikmah-hacks.devfolio.co/">REGISTER</a></b></button>
+            <a href="https://hikmah-hacks.devfolio.co/"><button  className=""><b>REGISTER</b></button></a>
           </li>
         </ul>
 

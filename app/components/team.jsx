@@ -36,7 +36,7 @@ const teams = [
     {
         name: "Jay Siddique",
         title: "Developer",
-        image: "depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.webp",
+        image: "Jay.png",
         blurb: "TBD"
 
     },
@@ -50,7 +50,7 @@ const teams = [
         name: "Wajdaan Malik",
         title: "Developer",
         image: "wajdaan.jpg",
-        blurb: "TBD"
+        blurb: "Third year computer science student passionate and excited to take on new challenges. Experience in Python, Java as well as web development. My goal is to become one of the greatest programmers in the world. In my eyes why dream if you can't dream big?"
     },
 
 ];
