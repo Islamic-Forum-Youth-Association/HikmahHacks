@@ -1,10 +1,9 @@
-// Imports go here
 
-function Previous_events_strip() {
+function Previous_events_strip(images_and_description : any) {
     // User state (If necessary) goes here
     return (
 
-        // JSX goes here.
+       
 
     );
 }
