@@ -16,6 +16,10 @@
 - planned around university midterms
 
 - focused on new poster designs
+
+- update url from hikmahhacks to hikmahcks
+
+- refocus brand styling accordingly
 </details>
 
 ### Next Documentation
