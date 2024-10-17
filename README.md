@@ -2,7 +2,7 @@
 
 <details>
 <summary>1.0.0 July 13th, 2024</summary>
-<br>
+
 - inaugural hackathon
 
 - community focused questions
@@ -10,6 +10,13 @@
 - breakfast, lunch provided
 </details>
 
+<details>
+<summary>1.0.1 November 3rd, 2024</summary>
+
+- planned around university midterms
+
+- focused on new poster designs
+</details>
 
 ### Next Documentation
 
