@@ -1,3 +1,17 @@
+### Hikmahacks Patch Notes
+
+```
+<details open>
+<summary>1.0.0 July 13th, 2024</summary>
+<br>
+- inaugural hackathon
+- community focused questions
+- breakfast, lunch provided
+</details>
+```
+
+
+### Next Documentation
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
