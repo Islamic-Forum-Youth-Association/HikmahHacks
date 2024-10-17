@@ -3,8 +3,11 @@
 <details>
 <summary>1.0.0 July 13th, 2024</summary>
 <br>
+
 - inaugural hackathon
+
 - community focused questions
+
 - breakfast, lunch provided
 </details>
 
